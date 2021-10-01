@@ -14,7 +14,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
 
 
-//@DataJpaTest
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @ActiveProfiles("test")
 @SpringBootTest(classes = {EmployeeUpdatesApplication.class},webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

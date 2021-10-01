@@ -12,13 +12,18 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
     @RequestMapping(value = "/employee/create", method = RequestMethod.GET)
-    public Object callSFDCQuery(@RequestParam String Id,
+    public Object callCreateEmployee(@RequestParam String Id,
                                 @RequestParam String Name,
                                 @RequestParam String City) {
         return employeeService.insertEmployee(Id, Name, City);
     }
     @RequestMapping(value = "/employee/delete", method = RequestMethod.GET)
-    public Object callSFDCQuery(@RequestParam String Id) {
+    public Object callDeleteEmployee(@RequestParam String Id) {
         return employeeService.deleteEmployee(Id);
+    }
+
+    @RequestMapping(value = "/employee/checkEmployeeExists", method = RequestMethod.GET)
+    public Object callCheckEmployee(@RequestParam String Id) {
+        return employeeService.checkEmployeeExists(Id);
     }
 }
